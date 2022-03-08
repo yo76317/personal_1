@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人網頁</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+    * {
+    
+    margin: 0;
+    font-family: 'Kanit','Noto Sans HK', sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* 透明度 */
+.opacity0{opacity:0;}
+
+/* 基準,找上一層 */
+.position_r{position:relative;}
+.position_a{position:absolute;
+        right:50%;}
+
+/* 回首頁斷點 */
+@media only screen and (max-width: 991px) {
+    .max991_w {
+    display:none;
+  }
+}
+.max991_w2{display:none;}
+/* navbar回首頁斷點 */
+@media only screen and (max-width: 991px) {
+    .max991_w3 {
+    display:block;
+  }
+}
+
+
+
+/* 第四頁 */
+.hover1{opacity:0.3;}
+.hover1:hover{opacity:1.2;}
+.hover2:hover{background-color:red;}
+.hover3:hover{transform:scale(2);}
+.hover4:hover{transform:rotate(45deg);}
+.hover5:hover{border-radius:80%;
+    transform:rotate(280deg);}
+.hover6:hover{box-shadow:10px 10px 5px rgba(13, 148, 125, 0.5);}
+.hover7:hover{box-shadow:inset 0 0 0 30px #fa0;}
+
+
+/* 第三頁 */
+/* 時間軸 */
+.timeline{position: relative;
+    margin: 0px auto;
+    display: flex;
+    flex-flow: column;
+    align-items:center;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color:#ffffff;
+    top: 0;
+    bottom: 0;
+    right: 1%;
+    margin-left: -3px;
+  }
+  .web-box::after{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 0%;
+    background-color:#118a97;
+    top: -1px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.yellow_box{border:1px solid yellow;}
+.webbox_up{border-bottom: 3px solid rgb(253, 253, 253);
+   width:400px; }
+.webbox_up2{border-bottom: 3px solid rgb(253, 253, 253);
+   width:600px; }
+
+
+
+
+
+
+/* 第二頁 */
+/* PIC照片 */
+.pic_1{
+    width:500px;
+    height:650px;
+    margin-top:40px;
+    margin-left:40px;
+    max-height:600px;
+}
+/* PIC照片 */
+.max560_w{max-height:560px;}
+@media only screen and (max-width: 991px) {
+    .max991_w4 {
+    width:99%;
+    height:103%;
+  }
+}
+/* 三個ICON往上跑一點 */
+@media only screen and (max-width: 1060px) {
+    .max1060_h {
+    position:relative;
+    bottom:50px;
+  }
+}
+
+.text_1{
+    color: white;
+    letter-spacing: 0.1em;
+    margin-top: 12vh;
+    padding-left: 5vw !important;
+    min-width:190px;
+}
+.titleBig_1{
+    background-color: rgb(209, 208, 207);
+    text-shadow: 3.2px 8px 1.6px rgb(193, 231, 247),
+    -4.8px 1.6px 1.6px rgb(238, 16, 16),
+    2.8px -4.8px 1.6px rgb(158, 248, 178);    
+    text-align: center;
+    font-size:7vh;
+}
+.titleBottom_1{
+    border-bottom: 1px solid var(--main-llightGreen);
+    box-shadow: 0 0 5px #2b9e9c, 0 0 10px #2b9e9c;
+    height: 1px;
+    width: 50%;
+    margin-top:-15px;
+}
+.titleBig_2{
+    color: rgb(255, 255, 255);
+    font-size: 4em; /* 4*16=64px */
+    text-shadow: -1px 1px 0 #111, 1px 1px 0 #111, 1px -1px 0 #111, -1px -1px 0 #111;
+    z-index: 1;
+    font-family: "Fredericka the Great" !important;
+}
+
+/* 第一頁 */
+/*插入導覽列*/
+.nav_m {
+    position: fixed;
+    top: 50%;
+    /* 絕對位置 */
+    right: 0;
+}
+.li_m {
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5) inset;
+    border-radius: 50%;
+    /* 改變鼠標 */
+    cursor: pointer;
+    z-index:10;
+}
+.active {
+    background-color: darkcyan;
+}
+
+/*每頁顯示的圖片*/
+.p01 {
+    background-image:url(./img/title01.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+.p02 {
+    background-color:black;
+    background-size: cover;
+    height: 100vh;
+}
+.p03 {
+    background-color:black;
+    background-size: cover;
+    height: 100vh;
+}
+.p04 {
+    background-color:black;
+    background-size: cover;
+    height: 100vh;
+}
+.p05 {
+    background-image: url(./img/mu01.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+    </style>
+</head>
+<body>
+    <!-- 滾輪-start -->
+    <div class="container-full">
+        <div class="nav_m">
+            <ul>
+                <li class="li_m active"></li>
+                <li class="li_m"></li>
+                <li class="li_m"></li>
+                <li class="li_m"></li>
+                <li class="li_m"></li>
+            </ul>
+        </div>
+        <!-- 網頁第一頁 -->
+        <!-- position:relative 以這為基準 -->
+        <!-- 斷點navbar-expand-lg,顏色navbar-light bg-light -->
+        <!-- 左上LOGO位置navbar-brand -->
+        <!-- 漢堡式選單按鈕navbar-toggler -->
+        <!-- 折疊面版collapse點擊面版觸發data-target-->
+        <div class="p01" id="goLogo">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark position_r ">
+                 <a class="navbar-brand" href="./img/yo2.jpg"><img src="img/yo1.jpg" class="" style="height:50px;width:50px;"> Yo</a>
+
+                <!-- position:absolute 會外往找一層 -->
+                <a class="nav-link text-white position_a max991_w" href="#goLogo">UP首頁</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler01">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- colapse -->
+                <!-- mt-lg-0 navbar斷點,上 -->
+                <div class="collapse navbar-collapse " id="navbarToggler01">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#goAbout"><i class="fa fa-vcard-o">ABOUT</i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#goResume"><i class="fab fa-hotjar">RESUME</i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#goPortfolio"><i class="fas fa-archive">PORTFOLIO</i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">SKILLS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./login.html" target="_blank">LOGIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link max991_w2 max991_w3 " href="#goLogo">UP首頁</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    
+
+        <div class="container-full">
+            <div class="p02" id="goAbout">
+                <!-- 網頁第二頁 -->
+                <!-- position:relative 以這為基準 -->
+                <!-- 斷點navbar-expand-lg,顏色navbar-light bg-light -->
+                <!-- 左上LOGO位置navbar-brand -->
+                <!-- 漢堡式選單按鈕navbar-toggler -->
+                <!-- 折疊面版collapse點擊面版觸發data-target-->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark position_r">
+                     <a class="navbar-brand" href="./img/yo2.jpg"><img src="img/yo1.jpg" class="" style="height:50px;width:50px;"> Yo</a>
+                    <!-- position:absolute 會外往找一層 -->
+                    <a class="nav-link text-white position_a max991_w" href="#goLogo">UP首頁</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler01">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- colapse -->
+                    <!-- mt-lg-0 navbar斷點,上 -->
+                    <div class="collapse navbar-collapse " id="navbarToggler01">
+                        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#goAbout"><i class="fa fa-vcard-o">ABOUT</i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#goResume"><i class="fab fa-hotjar">RESUME</i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#goPortfolio"><i class="fas fa-archive">PORTFOLIO</i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">SKILLS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./login.html" target="_blank">LOGIN</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link max991_w2 max991_w3 " href="#goLogo">UP首頁</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <section class="row" >
+                    <div class="col-12">
+                        <h2 class="titleBig_1">About Me</h2>
+                        <div class="titleBottom_1 mx-auto"></div>
+                    </div>
+
+                    <div class="col-6">
+                        <img src="img/yo01.jpg" class="pic_1 max991_w4">
+                    </div>
+                    
+                    <div class="col-6 max560_w">
+                        <div class="text_1">
+                            <p> 我是 <span class="text-success">佑青</span>，早期多從事服務業，每日工作皆需與人溝通協調，分擔工作內容<br>
+                                <br>
+                                <br>
+                                2021年，個人生涯規劃，參加政府職訓局開辦課程【PHP資料庫網頁設計班】<br>
+                                <br>
+                                <br>
+                                Gender : male <br>
+                                <br>
+                                Age : 35 <br>
+                                <br>
+                                Email : yo76317@gmail.com <br>
+                                <br>
+                                Work Place : Taipei City / New Taipei City <br>
+                                <br>
+                            </p>
+                        </div>
+                        <div class="row max1060_h">
+                            <div class="col-sm-12 col-lg-4 ">
+                                <a href="https://www.facebook.com/YoQingChen" target=_blank class="fa-3x">
+                                    <i class="fab fa-facebook-square text-white" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="col-sm-12 col-lg-4 ">
+                                <a href="https://github.com/yo76317" target=_blank class="fa-3x">
+                                    <i class="fab fa-github-square text-white" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="col-sm-12 col-lg-4">
+                                <a href="https://hackmd.io/@yo76317" target=_blank class="fa-3x">
+                                    <i class="fa fa-file-o text-white" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- 第三頁 -->
+        <div class="container-full">
+            <div class="p03" id="goResume">
+                <!-- position:relative 以這為基準 -->
+                <!-- 斷點navbar-expand-lg,顏色navbar-light bg-light -->
+                <!-- 左上LOGO位置navbar-brand -->
+                <!-- 漢堡式選單按鈕navbar-toggler -->
+                <!-- 折疊面版collapse點擊面版觸發data-target-->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark position_r">
+                    <a class="navbar-brand" href="./img/yo2.jpg"><img src="img/yo1.jpg" class="" style="height:50px;width:50px;"> Yo</a>
+                    <!-- position:absolute 會外往找一層 -->
+                    <a class="nav-link text-white position_a max991_w" href="#goLogo">UP首頁</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler01">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- colapse -->
+                    <!-- mt-lg-0 navbar斷點,上 -->
+                    <div class="collapse navbar-collapse " id="navbarToggler01">
+                        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#goAbout"><i class="fa fa-vcard-o">ABOUT</i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#goResume"><i class="fab fa-hotjar">RESUME</i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#goPortfolio"><i class="fas fa-archive">PORTFOLIO</i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">SKILLS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./login.html" target="_blank">LOGIN</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link max991_w2 max991_w3 " href="#goLogo">UP首頁</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <section class="row">
+                    <div class="col-12">
+                        <h2 class="titleBig_1">RESUME</h2>
+                        <div class="titleBottom_1 mx-auto"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-5 text-white mt-4 mx-auto">
+                            <h3 class="text-center">經歷</h3>
+                            <!-- 左項目一 -->
+                            <div class="timeline mt-2">
+                                <div class="yellow_box web-box">
+                                    <div class="webbox_up">
+                                        <div>
+                                            <i class="far fa-circle"></i>
+                                            <i class="far fa-circle"></i>
+                                            <i class="far fa-circle"></i>
+                                            <span class="float-right mr-2">2021/09 - 2022/3</span>
+                                        </div>
+                                    </div>
+                                    <h5 class="text-center">泰山職訓局-PHP資料庫網頁設計</h5>
+                                    <p>學習技能</p>
+                                    <ul>
+                                      <li>HTML5、CSS</li>
+                                      <li>JavaScript、jQuery</li>
+                                      <li>MySQL</li>
+                                      <li>Photoshop、Illustrator</li>
+                                    </ul>
+                                </div>
+                            </div>   
+
+                            <!-- 左項目二 -->
+                            <div class="timeline mt-2">
+                                <div class="yellow_box web-box">
+                                    <div class="webbox_up">
+                                        <div>
+                                            <i class="far fa-circle"></i>
+                                            <i class="far fa-circle"></i>
+                                            <i class="far fa-circle"></i>
+                                            <p class="float-right mr-2">2015 - 2021</p>
+                                        </div>
+                                    </div>
+                                    <h5 class="text-center">藥局門市 </h5>
+                                    <p>職務內容</p>
+                                    <ul>
+                                        <li>醫學衛教</li>
+                                        <li>商品管理、進退貨、即期商品</li>
+                                        <li>藥物細項彙整</li>
+                                        <li>面試、帶領新人</li>
+                                  </ul>
+                                </div>
+                            </div>                 
+                            <!-- 左項目三 -->
+                            <div class="timeline mt-2 ">
+                                <div class="yellow_box web-box">
+                                    <div class="webbox_up">
+                                        <div>
+                                            <i class="far fa-circle"></i>
+                                            <i class="far fa-circle"></i>
+                                            <i class="far fa-circle"></i>
+                                            <p class="float-right mr-2">2010 - 2015</p>
+                                        </div>
+                                        
+                                    </div>
+                                  <h5 class="text-center">服飾門市</h5>
+                                  <p>職務內容</p>
+                                  <ul>
+                                    <li>銷售及客戶溝通</li>
+                                    <li>商品進貨、品質確認</li>
+                                    <li>每月新品上線作業</li>
+                                    <li>面試、帶領新人</li>
+                                  </ul>
+                                </div>
+                            </div> 
+                            
+                        </div>
+
+                        <div class="col-lg-5 max991_w text-white mt-4 mx-auto">
+                            <h3 class="text-center">心得</h3>
+                            <!-- 右項目一 -->
+                            <div class="timeline2 mt-2">
+                                <div class="yellow_box web-box2">
+                                    <div class="webbox_up2">
+                                        <div>
+                                            <i class="far fa-circle"></i>
+                                            <i class="far fa-circle"></i>
+                                            <i class="far fa-circle"></i>
+                                            <span class="float-right mr-2"></span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-center">泰山職訓局-PHP資料庫網頁設計</h3>
+                                    <p>在泰山職訓，我從對於程式毫無概念到能以自己的邏輯寫
+                                        出程式，這段期間了解到網頁設計的前後端技術，同
+                                        時這段期間也產出自己的作品集，並了解到如何寫程
+                                        式。
+                                    </p>
+                                </div>
+                            </div>   
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- 網頁第四頁 -->
+        <div class="container-full">
+            <div class="p04" id="goPortfolio">
+                <!-- position:relative 以這為基準 -->
+                <!-- 斷點navbar-expand-lg,顏色navbar-light bg-light -->
+                <!-- 左上LOGO位置navbar-brand -->
+                <!-- 漢堡式選單按鈕navbar-toggler -->
+                <!-- 折疊面版collapse點擊面版觸發data-target-->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark position_r">
+                     <a class="navbar-brand" href="./img/yo2.jpg"><img src="img/yo1.jpg" class="" style="height:50px;width:50px;"> Yo</a>
+                    <!-- position:absolute 會外往找一層 -->
+                    <a class="nav-link text-white position_a max991_w" href="#goLogo">UP首頁</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler01">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- colapse -->
+                    <!-- mt-lg-0 navbar斷點,上 -->
+                    <div class="collapse navbar-collapse " id="navbarToggler01">
+                        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#goAbout"><i class="fa fa-vcard-o">ABOUT</i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#goResume"><i class="fab fa-hotjar">RESUME</i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#goPortfolio"><i class="fas fa-archive">PORTFOLIO</i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">SKILLS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./login.html" target="_blank">LOGIN</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link max991_w2 max991_w3 " href="#goLogo">UP首頁</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="d-flex row justify-content-around text-center ">
+                    <div class=" col-lg-3 bg-transparent col-12 mb-3 py-3 hover1">
+                      <div class="card-title">
+                        <img src="./img/a.png" class="card-img-top" style="height: 300px;width: 300px;">
+                      </div>
+                      <div>
+                        <span class="p-2" style="color: white;">bootstrap網站</span>
+                        <br>
+                        <span class="px-3 icon">HTML</span>
+                        <span class="px-3 icon">CSS</span>
+                        <span class="px-3 icon">JS</span>
+            
+                      </div>
+                    </div>
+            
+                    <div class="col-lg-3 bg-transparent col-12 mb-3 py-3    ">
+                      <div class="card-title hover2">
+                        <img src="./img/招生單.jpg" class="card-img-top" style="height: 300px;width: 300px;">
+                      </div>
+                      <div>
+                        <span class="p-2" style="color: white;">招生單</span>
+                        <br>
+                        <span class="px-3 icon">PS</span>
+
+            
+            
+                      </div>
+                    </div>
+            
+                    <div class="col-lg-3 bg-transparent col-12 mb-3 py-3  ">
+                      <div class="card-title hover3">
+                        <img src="./img/海報.jpg" class="card-img-top" style="height: 300px;width: 300px;">
+                      </div>
+                      <div>
+                        <span class="p-2" style="color: white;">海報</span>
+                        <br>
+                        <span class="px-3 icon">PS</span>
+                
+            
+            
+                      </div>
+            
+            
+                    </div>
+            
+                    <div class=" col-lg-3 bg-transparent col-12 mb-3 py-3    ">
+                      <div class="card-title hover4">
+                        <img src="./img/月曆.jpg" class="card-img-top" style="height: 300px;width: 300px;">
+                      </div>
+                      <div>
+                        <span class="p-2" style="color: white;">月曆</span>
+                        <br>
+                        <span class="px-3 icon">PS</span>
+                     
+            
+            
+                      </div>
+                    </div>
+            
+                    <div class=" col-lg-3 bg-transparent col-12 mb-3 py-3    ">
+                      <div class="card-title hover5">
+                        <img src="./img/投票.png" class="card-img-top" style="height: 300px;width: 300px;">
+                      </div>
+                      <div>
+                        <span class="p-2" style="color: white;">投票系統</span>
+                        <br>
+                        <span class="px-3 icon">PHP</span>
+                        <span class="px-3 icon">HTML</span>
+                        <span class="px-3 icon">bootstrap</span>
+                        <span class="px-3 icon">JS</span>
+            
+            
+            
+                      </div>
+                    </div>
+            
+            
+            
+                    <div class=" col-lg-3 bg-transparent col-12 mb-3 py-3    ">
+                      <div class="card-title hover6">
+                        <img src="./img/mu01.jpg" class="card-img-top" style="height: 300px;width: 300px;">
+                      </div>
+                      <div>
+                        <span class="p-2" style="color: white;"></span>
+                        <br>
+                        <span class="px-3 icon">HTML</span>
+                        <span class="px-3 icon">CSS</span>
+                        <span class="px-3 icon">JS</span>
+                        <span class="px-3 icon">bootstrap</span>
+            
+            
+                      </div>
+                    </div>
+            
+            
+                    <div class=" col-lg-3 bg-transparent col-12 mb-3 py-3    ">
+                      <div class="card-title hover7">
+                        <img src="./img/mu02.jpg" class="card-img-top" style="height: 300px;width: 300px;">
+                      </div>
+                      <div>
+                        <span class="p-2" style="color: white;"></span>
+                        <br>
+                        <span class="px-3 icon">HTML</span>
+                        <span class="px-3 icon">CSS</span>
+                        <span class="px-3 icon">JS</span>
+                        <span class="px-3 icon">bootstrap</span>
+            
+            
+            
+                      </div>
+                    </div>
+            
+                    <div class=" col-lg-3 bg-transparent col-12 mb-3 py-3   ">
+                      <div class="card-title hover1 ">
+                        <img src="./img/mu03.jpg" class="card-img-top " style="height: 300px;width: 300px;">
+                      </div>
+                      <div>
+                        <span class="p-2" style="color: white;"></span>
+                        <br>
+                        <span class="px-3 icon">HTML</span>
+                        <span class="px-3 icon">CSS</span>
+                        <span class="px-3 icon">JS</span>
+                        <span class="px-3 icon">bootstrap</span>
+            
+            
+            
+                      </div>
+                    </div>
+                  </div>
+
+                
+            </div>
+        </div>
+
+        
+        <div class="p05"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/ab96302682.js" crossorigin="anonymous"></script>
+    <!-- 滾輪插件 -->
+    <script src="./JQuery/jquery.mousewheel.js"></script>
+
+    <script>
+
+
+    // 滾輪-start
+    // 重新載入此頁面時，回到第一張圖，並將右方導覽列置中
+    // length 計算字串長度,陣列元素 [標點（圖片）]
+    $(document).ready(function() {
+    $('body, html').scrollTop(0);
+    center();
+    let num_li = $(".nav_m li").length;
+    let n = 1;
+    let moving = 0;
+    
+    // 滑鼠滾輪移動畫面
+    // window是偵整個視窗,滾輪滾動時
+    // debounce只承認最後一次觸發。
+    // deltaY (垂直滾動)
+    $(window).mousewheel(debounce(e => scrollToCurrentItem(e), 100,true));
+    function scrollToCurrentItem(e) {
+        if (moving === 0) {
+            moving = 1;
+            if (e.deltaY < 0) {
+                if (n < num_li) {
+                    n++;
+                }
+            } else {
+                if (n > 1) {
+                    n--;
+                }
+            }
+        }
+
+        $("html, body").stop().animate({
+                    scrollTop: $(".p0" + n).offset().top
+                },
+                function() {
+                    moving = 0;
+                }
+            );
+    }
+
+    //  點選右方導覽列時會到指定圖片
+    for (var i = 0; i <= num_li; i++) {
+        $("li:eq(" + i + ")").click({id: i},
+            function(e) {
+                $("li").removeClass('active');
+                var page = e.data.id + 1;
+                $("html,body").animate({
+                    scrollTop: $(".p0" + page).offset().top
+                });
+                $(this).addClass('active');
+                n = e.data.id + 1;
+            }
+        );
+    }
+
+    //  縮放網頁時，重新將導覽列置中
+    $(window).resize(function() {
+        center();
+    });
+
+    //  計算導覽列垂直置中的高度
+    function center() {
+        let pos = $(window).height() / 2 - $(".nav").height() / 2;
+        $(".nav").css("top", pos);
+    }
+
+    // 監控 window scroll 事件，用來改變右方導覽列 active 的項目
+    $(window).scroll(function() {
+        console.log('scroll', $(window).scrollTop());
+        if (
+            $(window).scrollTop() >= $(".p01").offset().top &&
+            $(window).scrollTop() < $(".p02").offset().top
+        ) {
+            //除了被點擊到的游標，其他都恢復成原來的顏色
+            $('li').removeClass('active');
+            $('li:eq(0)').addClass('active');
+        } else if (
+            $(window).scrollTop() >= $(".p02").offset().top &&
+            $(window).scrollTop() < $(".p03").offset().top
+        ) {
+            $('li').removeClass('active');
+            $('li:eq(1)').addClass('active');
+        } else if (
+            $(window).scrollTop() >= $(".p03").offset().top &&
+            $(window).scrollTop() < $(".p04").offset().top
+        ) {
+            $('li').removeClass('active');
+            $('li:eq(2)').addClass('active');
+        } else if (
+            $(window).scrollTop() >= $(".p04").offset().top &&
+            $(window).scrollTop() < $(".p05").offset().top
+        ) {
+            $('li').removeClass('active');
+            $('li:eq(3)').addClass('active');
+        } else if ($(window).scrollTop() >= $(".p05").offset().top) {
+            $('li').removeClass('active');
+            $('li:eq(4)').addClass('active');
+        }
+    });
+});
+
+
+/**
+ * 將要 debounce 的函式代入 func 中，不用 invoke
+ * wait，設定時間（毫秒）
+ * immeditate 如果是 true 則在事件觸發時會立即執行，
+ * 但事件結束時不會執行；如果是 false 則事件觸發時不會立即執行，
+ * 但事件結束時會執行。
+ **/
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this,
+            args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
+// 第四頁
+
+    </script>
+</body>
+</html>
